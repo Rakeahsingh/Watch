@@ -2,7 +2,7 @@ package com.example.watch.watch_features.domain.repository
 
 import kotlinx.coroutines.flow.Flow
 
-interface DataStoreRepository {
+interface DataStoreRepository  {
 
     suspend fun writeOnBoardingKeyDataStore(complete: Boolean)
 

@@ -21,6 +21,7 @@ class DataStoreRepositoryImp @Inject constructor(
 ): DataStoreRepository {
 
     private val dataStore = context.dataStore
+
     private val onBoardingKey = booleanPreferencesKey(Constants.WELCOME_KEY)
     override suspend fun writeOnBoardingKeyDataStore(complete: Boolean) {
         dataStore.edit { store ->
