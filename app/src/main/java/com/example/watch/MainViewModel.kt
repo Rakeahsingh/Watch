@@ -1,5 +1,6 @@
 package com.example.watch
 
+import android.annotation.SuppressLint
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.watch.core.navigation.Screens
@@ -10,6 +11,7 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@SuppressLint("SuspiciousIndentation")
 @HiltViewModel
 class MainViewModel @Inject constructor(
     private val getOnBoardingUseCase: GetOnBoardingUseCase
@@ -23,7 +25,7 @@ class MainViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            getOnBoardingUseCase().collectLatest { complete ->
+            getOnBoardingUseCase().collect { complete ->
                 if(complete)
                 startDestination.value = Screens.HomeScreen.route
             }

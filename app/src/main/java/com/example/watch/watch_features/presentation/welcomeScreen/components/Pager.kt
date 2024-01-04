@@ -91,7 +91,7 @@ fun StartButton(
         AnimatedVisibility(
             modifier = modifier
                 .fillMaxWidth(),
-            visible = pageState.pageCount == 2
+            visible = pageState.currentPage == 2
         ) {
 
            Button(onClick = {

@@ -10,19 +10,19 @@ sealed class OnBoardingPage(
     val description: String
 ) {
 
-    object firstPage: OnBoardingPage(
+    object FirstPage: OnBoardingPage(
         R.drawable.onboarding1,
         "Secure Your Time",
         "We Secure our Time in this Single App"
     )
 
-    object secondPage: OnBoardingPage(
+    object SecondPage: OnBoardingPage(
         R.drawable.onboarding2,
         "Secure Your Time",
         "We Secure our Time in this Single App"
     )
 
-    object thirdPage: OnBoardingPage(
+    object ThirdPage: OnBoardingPage(
         R.drawable.onboarding3,
         "Secure Your Time",
         "We Secure our Time in this Single App"

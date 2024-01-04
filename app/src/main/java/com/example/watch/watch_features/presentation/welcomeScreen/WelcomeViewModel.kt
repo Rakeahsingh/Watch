@@ -7,7 +7,6 @@ import androidx.lifecycle.viewModelScope
 import com.example.watch.watch_features.domain.use_Case.writeDataSoreUseCase.EditOnBoardingUseCase
 import com.example.watch.watch_features.presentation.welcomeScreen.components.OnBoardingPage
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -16,11 +15,11 @@ class WelcomeViewModel @Inject constructor(
     private val editOnBoardingUseCase: EditOnBoardingUseCase
 ): ViewModel() {
 
-    val pageListState: State<List<OnBoardingPage>> = mutableStateOf(
+    val listOfPages: State<List<OnBoardingPage>> = mutableStateOf(
         listOf(
-            OnBoardingPage.firstPage,
-            OnBoardingPage.secondPage,
-            OnBoardingPage.thirdPage
+            OnBoardingPage.FirstPage,
+            OnBoardingPage.SecondPage,
+            OnBoardingPage.ThirdPage
         )
     )
 

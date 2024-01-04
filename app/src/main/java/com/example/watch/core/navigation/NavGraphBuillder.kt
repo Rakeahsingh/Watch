@@ -8,6 +8,7 @@ import com.example.watch.core.navigation.Screens
 import com.example.watch.watch_features.presentation.homeScreen.HomeScreen
 import com.example.watch.watch_features.presentation.stopWatchScreen.StopWatchScreen
 import com.example.watch.watch_features.presentation.timerScreen.TimerScreen
+import com.example.watch.watch_features.presentation.welcomeScreen.WelcomeScreen
 
 @Composable
 fun NavGraphBuilder(
@@ -17,8 +18,12 @@ fun NavGraphBuilder(
 
     NavHost(
         navController = navController,
-        startDestination = Screens.HomeScreen.route
+        startDestination = startDestination
     ){
+
+        composable(Screens.WelcomeScreen.route){
+            WelcomeScreen(navController = navController)
+        }
 
         composable(Screens.HomeScreen.route){
             HomeScreen()

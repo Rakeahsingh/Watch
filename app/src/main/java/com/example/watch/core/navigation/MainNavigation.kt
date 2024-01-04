@@ -64,7 +64,8 @@ fun MainNavigation(
             contentAlignment = Alignment.Center
         ){
 
-            MainNavigation(
+            NavGraphBuilder(
+                navController = navController ,
                 startDestination = startDestination
             )
 

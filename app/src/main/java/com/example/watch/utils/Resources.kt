@@ -1,4 +1,4 @@
-package com.example.watch.core
+package com.example.watch.utils
 
 sealed class Resources<T>(val data: T? = null, val message: String? = null) {
 
