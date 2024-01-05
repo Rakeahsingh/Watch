@@ -5,9 +5,8 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.MaterialTheme
+import androidx.compose.material.Card
+import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -20,36 +19,34 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 fun BottomNavBar(
     navController: NavController,
     items: List<NavBarHolder>,
-    onItemClick: (NavBarHolder) -> Unit
+    itemClick: (NavBarHolder) -> Unit
 ) {
 
     val backStackEntry by navController.currentBackStackEntryAsState()
 
     Card(
         modifier = Modifier
-            .background(MaterialTheme.colorScheme.background)
+            .background(MaterialTheme.colors.background)
             .fillMaxWidth(),
-        elevation = CardDefaults.cardElevation(4.dp)
+        elevation = 4.dp
     ) {
 
-        Row(
+        Row (
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(8.dp),
-            horizontalArrangement = Arrangement.Center,
+            horizontalArrangement = Arrangement.SpaceAround,
             verticalAlignment = Alignment.CenterVertically
-        ) {
+        ){
 
             items.forEach { item ->
-
-                val isSelected = item.route == backStackEntry?.destination?.route
+                val selected = item.route == backStackEntry?.destination?.route
 
                 NavBarItem(
                     item = item,
-                    isSelected = isSelected
-                ) {
-                    onItemClick(item)
-                }
+                    onClick = { itemClick(item) },
+                    isSelected = selected
+                )
             }
 
         }

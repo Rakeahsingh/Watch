@@ -29,33 +29,35 @@ fun MainNavigation(
     val rootDestination = listOf(
         Screens.HomeScreen.route,
         Screens.StopWatchScreen.route,
-        Screens.TimerScreen.route
+        Screens.TimerScreen.route,
     )
 
     val bottomNavState = remember { mutableStateOf(true) }
 
-    val backStateEntry by navController.currentBackStackEntryAsState()
+    val navBarEntry by navController.currentBackStackEntryAsState()
+    bottomNavState.value = rootDestination.contains(navBarEntry?.destination?.route)
 
-    bottomNavState.value = rootDestination.contains(backStateEntry?.destination?.route)
-    
+
     Scaffold(
-        scaffoldState = scaffoldState,
         bottomBar = {
             AnimatedVisibility(
                 visible = bottomNavState.value,
-                enter = slideInVertically(initialOffsetY = {it}),
-                exit = slideOutVertically(targetOffsetY = {it})
+                enter = slideInVertically(initialOffsetY = { it }) ,
+                exit = slideOutVertically(targetOffsetY = { it })
             ) {
                 BottomNavBar(
                     navController = navController,
                     items = provideBottomNavItem(),
-                    onItemClick = {
-                        navController.navigate(it.route)
-
+                ){
+                    navController.navigate(it.route){
+                        popUpTo(navController.graph.startDestinationId)
+                        launchSingleTop = true
+                        restoreState = true
                     }
-                )
+                }
             }
-        }
+        },
+        scaffoldState = scaffoldState
     ) {
 
         Box(
@@ -65,12 +67,11 @@ fun MainNavigation(
         ){
 
             NavGraphBuilder(
-                navController = navController ,
+                navController = navController,
                 startDestination = startDestination
             )
 
         }
-        
     }
 
 }

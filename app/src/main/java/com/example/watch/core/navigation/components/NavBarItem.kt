@@ -32,7 +32,7 @@ fun NavBarItem(
     onClick: () -> Unit
 ) {
 
-    val spacing = LocalSpacing.current
+//    val spacing = LocalSpacing.current
 
     val backgroundColor = if (isSelected) MaterialTheme.colors.onSurface.copy(alpha = 0.1f)
                           else Color.Transparent
