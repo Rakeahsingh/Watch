@@ -12,9 +12,9 @@ data class NavBarHolder(
 fun provideBottomNavItem() = listOf(
 
     NavBarHolder(
-        "Home",
-        R.drawable.img_2,
-        Screens.HomeScreen.route
+        "Clock",
+        R.drawable.alarm,
+        Screens.ClockScreen.route
     ),
 
     NavBarHolder(

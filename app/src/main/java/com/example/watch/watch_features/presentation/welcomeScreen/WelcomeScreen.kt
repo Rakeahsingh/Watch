@@ -65,8 +65,8 @@ fun WelcomeScreen(
                 modifier = Modifier.weight(2f)
             ) {
 //                navController.popBackStack()
-//                viewModel.saveOnBoarding(complete = true)
-                navController.navigate(Screens.HomeScreen.route)
+                viewModel.saveOnBoarding(complete = true)
+                navController.navigate(Screens.ClockScreen.route)
 
             }
 

@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
@@ -34,20 +35,17 @@ fun NavBarItem(
 
 //    val spacing = LocalSpacing.current
 
-    val backgroundColor = if (isSelected) MaterialTheme.colors.onSurface.copy(alpha = 0.1f)
-                          else Color.Transparent
+    val backgroundColor =  if (isSelected) MaterialTheme.colors.onSurface.copy(alpha = 0.1f) else Color.Transparent
 
-    val contentColor = if (isSelected) MaterialTheme.colors.onSurface
-                        else Color.Gray
+    val contentColor = if (isSelected) MaterialTheme.colors.onSurface else Color.Gray
 
-    Box(
+    Box (
         modifier = Modifier
             .clip(RoundedCornerShape(12.dp))
             .background(backgroundColor)
-            .clickable {
-                onClick()
-            }
+            .clickable { onClick() }
     ){
+
         Row(
             modifier = Modifier
                 .padding(12.dp),
@@ -57,8 +55,9 @@ fun NavBarItem(
 
             Icon(
                 painter = painterResource(id = item.icon),
+                tint = contentColor,
                 contentDescription = item.title,
-                tint = contentColor
+                modifier = Modifier.size(30.dp)
             )
 
             Spacer(modifier = Modifier.padding(horizontal = 0.dp))
@@ -66,13 +65,12 @@ fun NavBarItem(
             AnimatedVisibility(visible = isSelected) {
                 Text(
                     text = item.title,
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 14.sp,
+                    textAlign = TextAlign.Center,
                     color = contentColor,
-                    textAlign = TextAlign.Center
+                    fontSize = 14.sp,
+                    fontWeight = FontWeight.Bold
                 )
             }
-
         }
     }
 

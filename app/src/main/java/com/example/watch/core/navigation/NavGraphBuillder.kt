@@ -4,8 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.watch.core.navigation.Screens
-import com.example.watch.watch_features.presentation.homeScreen.HomeScreen
+import com.example.watch.watch_features.presentation.clockScreen.ClockScreen
 import com.example.watch.watch_features.presentation.stopWatchScreen.StopWatchScreen
 import com.example.watch.watch_features.presentation.timerScreen.TimerScreen
 import com.example.watch.watch_features.presentation.welcomeScreen.WelcomeScreen
@@ -25,8 +24,8 @@ fun NavGraphBuilder(
             WelcomeScreen(navController = navController)
         }
 
-        composable(Screens.HomeScreen.route){
-            HomeScreen()
+        composable(Screens.ClockScreen.route){
+            ClockScreen()
         }
 
         composable(Screens.StopWatchScreen.route){

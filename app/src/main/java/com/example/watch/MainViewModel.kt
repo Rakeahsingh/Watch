@@ -27,7 +27,7 @@ class MainViewModel @Inject constructor(
         viewModelScope.launch {
             getOnBoardingUseCase().collect { complete ->
                 if(complete)
-                startDestination.value = Screens.HomeScreen.route
+                startDestination.value = Screens.ClockScreen.route
             }
             isLoading.value = false
         }

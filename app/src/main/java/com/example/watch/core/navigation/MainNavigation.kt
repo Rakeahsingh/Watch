@@ -27,7 +27,7 @@ fun MainNavigation(
     val scaffoldState = rememberScaffoldState()
 
     val rootDestination = listOf(
-        Screens.HomeScreen.route,
+        Screens.ClockScreen.route,
         Screens.StopWatchScreen.route,
         Screens.TimerScreen.route,
     )
