@@ -1,15 +1,11 @@
 package com.example.watch.watch_features.presentation.clockScreen
 
-import android.widget.AnalogClock
-import androidx.compose.foundation.layout.Arrangement
+
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -18,8 +14,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.font.FontWeight
 import com.example.watch.utils.LocalSpacing
+import com.example.watch.watch_features.presentation.clockScreen.components.AnalogClock
 import com.example.watch.watch_features.presentation.clockScreen.components.HeaderText
 import com.example.watch.watch_features.presentation.clockScreen.components.TimerText
 import kotlinx.coroutines.delay
@@ -66,9 +62,13 @@ fun ClockScreen() {
 
         HeaderText("Clock")
 
-        Spacer(modifier = Modifier.height(spacing.extraLarge))
+        Spacer(modifier = Modifier.height(spacing.medium))
 
-        AnalogClock()
+        AnalogClock(
+            hour = hour.toInt(),
+            min = min.toInt(),
+            sec = sec.toInt()
+        )
 
 
         Spacer(modifier = Modifier.height(spacing.large))
