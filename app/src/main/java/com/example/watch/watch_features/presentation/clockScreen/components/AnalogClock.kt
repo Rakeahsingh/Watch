@@ -10,19 +10,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.unit.dp
-import com.example.watch.ui.theme.DeepPurple300
 import com.example.watch.ui.theme.businessBg
-import com.example.watch.ui.theme.clothBg
 import com.example.watch.ui.theme.electricBg
 import com.example.watch.ui.theme.giftBg
 import com.example.watch.ui.theme.subBg
-import com.example.watch.ui.theme.travelBg
 import kotlin.math.min
 
 @Composable

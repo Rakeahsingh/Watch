@@ -4,6 +4,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 
 val LightBlue500 = Color(0xFF03A9F4)
+val LightBlue200 = Color(0xFF52C5F8)
 val Grey100 = Color(0xFFF5F5F5)
 val DeepPurple900 = Color(0xFF311B92)
 val DeepPurple300 = Color(0xFF9575CD)
@@ -46,4 +47,9 @@ val incomeGradient = Brush.horizontalGradient(
 val expenseGradient = Brush.horizontalGradient(
     0.0f to Red500,
     0.95f to Red200
+)
+
+val buttonGradient = Brush.horizontalGradient(
+    0.0f to LightBlue500,
+    0.9f to LightBlue200
 )
