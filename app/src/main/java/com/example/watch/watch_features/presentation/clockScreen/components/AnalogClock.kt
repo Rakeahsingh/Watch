@@ -45,11 +45,11 @@ fun AnalogClock(
             val radius = diameter / 2
 
 
-            repeat(4){
+            repeat(12){
                 val start = center - Offset(0f, radius)
                 val end = start + Offset(0f, radius / 40f)
 
-                rotate(it / 4f * 360){
+                rotate(it / 12f * 360){
 
                     drawLine(
                         color = Color.White,

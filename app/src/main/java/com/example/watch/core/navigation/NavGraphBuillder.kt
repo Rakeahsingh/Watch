@@ -33,7 +33,7 @@ fun NavGraphBuilder(
         }
 
         composable(Screens.TimerScreen.route){
-            TimerScreen()
+            TimerScreen(navController = navController)
         }
 
     }
