@@ -1,5 +1,7 @@
 package com.example.watch.watch_features.presentation.timerScreen
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -22,8 +24,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.watch.utils.LocalSpacing
+import com.example.watch.watch_features.presentation.timerScreen.components.TimerSelector
 import com.example.watch.watch_features.presentation.timerScreen.components.TimerSheetContent
 import kotlinx.coroutines.launch
+
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
@@ -56,11 +60,11 @@ fun TimerScreen(
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(150.dp)
+                    .height(250.dp)
                     .padding(spacing.medium)
             ) {
 
-
+                TimerSelector()
 
             }
 
